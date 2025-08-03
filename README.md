@@ -11,7 +11,7 @@ This project extracts FIFA World Cup finals data from Wikipedia and appends it t
 ## Setup
 1. Clone the repo and install dependencies:
    ```bash
-   pip install -r requirements.txt
+   uv add -r requirements.txt
    ```
 2. Create a `.env` file (see `.env` example in repo).
 3. Run the main script:
@@ -33,32 +33,19 @@ docker run --env-file .env wikipedia-parser
 - `requirements.txt` — Python dependencies
 - `README.md` — Project documentation
 
-## Configuration
-All configuration is in `.env` (see `toDo.md` for details).
-Reference Sheet : https://docs.google.com/spreadsheets/d/1YyZbgnCtCcQDcpCXlg8b066KL6mq_R3l8pu4PJ2wPq8/edit?usp=sharing
-
-## License
-Apache
-
-# Submission Guidelines
-
-- Create a detailed flowchart illustrating the steps required to complete the task. (see below)
-- Include the input and output for each step and any other relevant details.
-- For the API: include all relevant details about the POST request like the URL, params and the body.
-
 ## Workflow Flowchart (Mermaid)
 
 ```mermaid
 flowchart TD
     A([Start])
-    B[Open page\nInput: PAGE_URL\nOutput: HTML content]
-    C[Parse number\nInput: ROW_COUNT (str)\nOutput: n_rows (int)]
-    D[Extract table rows\nInput: HTML, TABLE_SELECTOR, n_rows\nOutput: List of <tr> elements]
-    E[Loop over rows\nInput: List of <tr>\nOutput: Extracted data rows]
-    F{Detour: Data extracted?}
-    G[Call API (POST to Google Sheets)\nInput: Data rows\nOutput: API response]
+    B[Open page\\nInput: PAGE_URL\\nOutput: HTML content]
+    C[Parse number\\nInput: ROW_COUNT str\\nOutput: n_rows int]
+    D[Extract table rows\\nInput: HTML, TABLE_SELECTOR, n_rows\\nOutput: List of <tr> elements]
+    E[Loop over rows\\nInput: List of <tr>\\nOutput: Extracted data rows]
+    F{Data extracted?}
+    G[Call API to Google Sheets\\nInput: Data rows\\nOutput: API response]
     H([End])
-    I[Abort\nNo data extracted]
+    I[[Abort\\nNo data extracted]]
 
     A --> B --> C --> D --> E --> F
     F -- Yes --> G --> H
@@ -105,3 +92,11 @@ flowchart TD
     ]
   }
   ```
+
+
+## Configuration
+All configuration is in `.env`.
+Reference Sheet : https://docs.google.com/spreadsheets/d/1YyZbgnCtCcQDcpCXlg8b066KL6mq_R3l8pu4PJ2wPq8/edit?usp=sharing
+
+## License
+Apache
