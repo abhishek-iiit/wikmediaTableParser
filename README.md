@@ -38,14 +38,25 @@ docker run --env-file .env wikipedia-parser
 ```mermaid
 flowchart TD
     A([Start])
-    B[Open page\\nInput: PAGE_URL\\nOutput: HTML content]
-    C[Parse number\\nInput: ROW_COUNT str\\nOutput: n_rows int]
-    D[Extract table rows\\nInput: HTML, TABLE_SELECTOR, n_rows\\nOutput: List of <tr> elements]
-    E[Loop over rows\\nInput: List of <tr>\\nOutput: Extracted data rows]
+    B[Open page
+Input: PAGE_URL
+Output: HTML content]
+    C[Parse number
+Input: ROW_COUNT str
+Output: n_rows int]
+    D[Extract table rows
+Input: HTML, TABLE_SELECTOR, n_rows
+Output: List of <tr> elements]
+    E[Loop over rows
+Input: List of <tr>
+Output: Extracted data rows]
     F{Data extracted?}
-    G[Call API to Google Sheets\\nInput: Data rows\\nOutput: API response]
+    G[Call API to Google Sheets
+Input: Data rows
+Output: API response]
     H([End])
-    I[[Abort\\nNo data extracted]]
+    I[[Abort
+No data extracted]]
 
     A --> B --> C --> D --> E --> F
     F -- Yes --> G --> H
