@@ -37,4 +37,4 @@ docker run --env-file .env wikipedia-parser
 All configuration is in `.env` (see `toDo.md` for details).
 
 ## License
-MIT
+Apache
