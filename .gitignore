@@ -1,0 +1,15 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.python-version
+*$py.class
+uv.lock
+
+# Environment variables
+.env
+
+# VSCode
+.vscode/
+
+# Qodo
+.qodo/

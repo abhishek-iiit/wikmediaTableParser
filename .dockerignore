@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.qodo/
+.vscode/
+tests/
+.git/
+.gitignore
+README.md
+toDo.md
